@@ -1,9 +1,10 @@
 # r^2 based on the latest measured y-values
 import numpy as np
 
+
 # Calculate r^2 based on the latest measured y-values
-# measuredy and estimatedy must be vectors.
-def r2lm( measuredy, estimatedy ):
-    measuredy  = np.array( measuredy ).flatten()
-    estimatedy = np.array( estimatedy ).flatten()
-    return float( 1 - sum( (measuredy-estimatedy )**2 ) / sum((measuredy[1:]-measuredy[:-1])**2) )
+# measured_y and estimated_y must be vectors.
+def r2lm(measured_y, estimated_y):
+    measured_y = np.array(measured_y).flatten()
+    estimated_y = np.array(estimated_y).flatten()
+    return float(1 - sum((measured_y - estimated_y) ** 2) / sum((measured_y[1:] - measured_y[:-1]) ** 2))
